@@ -14,7 +14,6 @@ def _required(name: str) -> str:
     return value
 
 
-DEBUG = False
 SECRET_KEY = _required("DJANGO_SECRET_KEY")
 
 ALLOWED_HOSTS = [host.strip() for host in _required("DJANGO_ALLOWED_HOSTS").split(",")]
