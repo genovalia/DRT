@@ -38,3 +38,5 @@ COPY . .
 RUN chmod -R 775 .
 RUN chown -R 1000:root .
 USER 1000
+
+CMD ["gunicorn", "drt_core.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--worker-tmp-dir", "/dev/shm", "--timeout", "120", "--access-logfile", "-", "--error-logfile", "-"]
