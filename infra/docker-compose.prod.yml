@@ -3,7 +3,7 @@ services:
     build:
       context: ../backend
       dockerfile: ../infra/docker/backend.Dockerfile
-    image: registre.apps.ul-pca-pr-ul01.ulaval.ca/drt-backend:latest
+    image: registre.apps.ul-pca-pr-ul01.ulaval.ca/ul-val-genovalia-pr/drt-backend:latest
     security_opt:
       - no-new-privileges:true
     command: >
@@ -65,7 +65,7 @@ services:
     build:
       context: ../frontend
       dockerfile: ../frontend/frontend.Dockerfile
-    image: registre.apps.ul-pca-pr-ul01.ulaval.ca/drt-frontend:latest
+    image: registre.apps.ul-pca-pr-ul01.ulaval.ca/ul-val-genovalia-pr/drt-frontend:latest
     command: npm start
     env_file:
       - ../.env.production
